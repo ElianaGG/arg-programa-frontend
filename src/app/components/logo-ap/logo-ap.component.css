@@ -1,0 +1,23 @@
+.row {
+    padding: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(14, 14, 15);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logoAP {
+    width: 150px;
+}
+
+img {
+    width: 50px;
+}
+
+.btn {
+    border-width: medium;
+}

@@ -1,0 +1,15 @@
+.row{
+    padding: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+div {
+    background-color: #FFF8E1;
+}
+/*Estilo de la foto de perfil*/
+.img-fluid {
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}
+
