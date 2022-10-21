@@ -13,7 +13,8 @@
                 <a href=""><img src="../../../assets/facebook.png" id="facebook"></a>
                 <a href=""><img src="../../../assets/instagram.png" id="instagram"></a>
                 <a href=""><img src="../../../assets/github.png" id="github"></a>
-                <button type="button" class="btn btn-outline-light" (click)="login()">Ingresar</button>
+                <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingresar</button>
+                <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Salir</button>
             </div>
         </div>
     </div>

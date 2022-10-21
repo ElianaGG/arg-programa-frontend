@@ -1,0 +1,19 @@
+div{
+    padding: 30px;
+}
+form{
+	width:700px;
+	padding: 50px;
+	border-radius:10px;
+	margin:auto;
+	background: linear-gradient(to right, rgba(27, 94, 32, 1), rgb(217, 195, 161));
+    font-family: 'Noto Sans JP', sans-serif;
+    font: bold;
+}
+
+button{
+    font-family: 'Noto Sans JP', sans-serif;
+    font: bold;
+    position: relative;
+    left: 200px;
+}

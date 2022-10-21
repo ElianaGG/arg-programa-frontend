@@ -6,15 +6,25 @@
 <div class="container-fluid">
     <div class="row">
         <h2><strong>Experiencia laboral</strong></h2>
-        <div class="col-lg-12">
-            <ul>
-                <li>
-                    <h3> <strong>Estudio Contable Neme-Rizzo</strong></h3>
-                    <h4>(2016-actualidad)</h4>
-                    <p>Mi participación en este estudio es como administrativo contable donde realizo diversas tareas,
-                        utilizando tecnologías como 3-C Informatica/Time Informatica/ Aplicativos de AFIP. </p>
-                </li>
-            </ul>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaexperiencia" *ngIf="isLogged">
+                Nueva experiencia
+            </button>
+        </div>
+
+        <div class="col-lg 1"></div>
+        <div class="col-lg-11">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Experiencia of experiencia">
+                        <td>{{Experiencia.nombreExp}}</td>
+                        <td>{{Experiencia.descriptionExp}}</td>
+                        <td>Editar</td>
+                        <td>Borrar</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
