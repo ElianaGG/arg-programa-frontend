@@ -20,7 +20,7 @@ export class SExperienciaService {
   }
 
   public save(experiencia: Experiencia): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', experiencia);
+    return this.httpClient.post<any>(this.expURL, experiencia);
   }
 
   public update(id: number, experiencia: Experiencia): Observable<any>{
@@ -30,5 +30,4 @@ export class SExperienciaService {
   public delete(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
   }
-
 }

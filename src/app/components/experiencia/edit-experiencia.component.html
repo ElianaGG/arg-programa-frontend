@@ -3,18 +3,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="expLaboral">
     <div class="row">
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombreExp"><h3>Nombre de la organización</h3></label>
-                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
+                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="expLaboral.nombreExp" required>
                 </div>
                 <div class="form-group">
                     <label for="descriptionExp"><h3>Descripción de las tareas</h3></label>
-                    <input type="text" class="form-control" id="descriptionExp" name="descriptionExp" [(ngModel)]="descriptionExp" required>
+                    <input type="text" class="form-control" id="descriptionExp" name="descriptionExp" [(ngModel)]="expLaboral.descriptionExp" required>
                 </div>
-                    <button class="btn btn-light">Agregar experiencia</button>
+                    <button class="btn btn-light">Actualizar experiencia</button>
             </form>
     </div>
 </div>
+
