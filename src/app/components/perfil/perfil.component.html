@@ -3,22 +3,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 col-lg-3">
-                <img class="img-fluid" src="../../../assets/Foto_Perfil.jpg" alt="foto-perfil">
-            </div>
-            <div class="col-md-4 col-lg-9">
-                <span>
-                    <h1 id="nombre">Bienvenido, mi nombre es {{persona.nombre}} {{persona.apellido}} </h1>
-                    <h2> Soy Full Stack Developer Jr.</h2>
-                    <p>Me encuentro estudiando y conociendo este mundo tan grande e interesante que es la Programación. Mi
-                        objetivo es particiar en un grupo donde pueda verter mis energías
-                        y desarrollar mi potencial laboral en pos de los objetivos generales.</p>
-                    <p>Estoy motivada por incertarme en el Mundo IT, donde se encuentra en constante cambio, con
-                        nuevas tecnologías para aprender y crecer día a día.</p>
-                    <p>Me considero una persona resposable y buena compañera. Aspiro a potenciar mis habilidad técnicas.</p>
-                </span>
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/editperfil/1" *ngIf="isLogged">
+                Editar persona
+            </button>
+        </div>
+        <div class="col-md-8 col-lg-3">
+
+            <img class="img-fluid" src="{{persona.img}}" alt="foto-perfil">
+        </div>
+        <div class="col-md-4 col-lg-9">
+            <span>
+                <h1 id="nombre">Bienvenido, mi nombre es {{persona.nombre}} {{persona.apellido}} </h1>
+                <h2> Soy Full Stack Developer Jr.</h2>
+                <p> {{persona.description}}</p>
+            </span>
         </div>
     </div>
+</div>

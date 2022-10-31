@@ -7,20 +7,20 @@
     <div class="row">
         <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
             <div class="form-group">
-                <label for="nombreEdu">
+                <label for="nombreP">
                     <h3>Nombre de la institución</h3>
                 </label>
-                <input type="text" class="form-control" id="nombreEdu" name="nombreEdu" [(ngModel)]="nombreEdu"
+                <input type="text" class="form-control" id="nombreP" name="nombreP" [(ngModel)]="nombreP"
                     required>
             </div>
             <div class="form-group">
                 <label for="descriptionEdu">
-                    <h3>Descripción de sus estudios</h3>
+                    <h3>Descripción de proyecto</h3>
                 </label>
-                <input type="text" class="form-control" id="descripcionEdu" name="descripcionEdu"
-                    [(ngModel)]="descripcionEdu" required>
+                <input type="text" class="form-control" id="descripcionP" name="descripcionP"
+                    [(ngModel)]="descripcionP" required>
             </div>
-            <button class="btn btn-light">Agregar educación</button>
+            <button class="btn btn-light">Agregar proyecto</button>
         </form>
     </div>
 </div>
