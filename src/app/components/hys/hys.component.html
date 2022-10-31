@@ -3,32 +3,49 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
+
 <div class="container-fluid">
+
   <div class="row">
+
     <h2> <strong>Hard & Soft Skills</strong></h2>
-    <div class="col-md-3">
-      <circle-progress [percent]="40" [radius]="70" [imageSrc]="'./assets/html-5.png'"  [responsive]="true" [showImage]="true"
-        [imageHeight]="60" [imageWidth]="60" [showUnits]="false" [outerStrokeWidth]="12" [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#fa5f49'" [innerStrokeColor]="'#f9a59a'" [animation]="true" [animationDuration]="300">
+
+    <div class="col-lg-2">
+      <button type="button" class="btn btn-dark" routerLink="/newskill" *ngIf="isLogged">Agregar skill</button>
+    </div>
+
+    <div class="col-md-3" *ngFor="let skill of skill">
+      <circle-progress [animation]="true" [animationDuration]="400" [imageSrc]="''" [imageHeight]="60" [imageWidth]="60"
+        [innerStrokeColor]="'#f9a59a'" [innerStrokeWidth]="8" [percent]="(skill.porcentaje)"
+        [outerStrokeColor]="'#fa5f49'" [outerStrokeWidth]="12" [radius]="70" [responsive]="true" [showImage]="false"
+        [showUnits]="false" [showSubtitle]="false" [showTitle]="true" [title]="(skill.nombre)" [titleColor]="'#212F3C'">
       </circle-progress>
-    </div>
-    <div class="col-md-3">
-      <circle-progress [percent]="35" [radius]="70" [imageSrc]="'./assets/css.png'" [responsive]="true" [showImage]="true"
-        [imageHeight]="60" [imageWidth]="60" [showUnits]="false" [outerStrokeWidth]="12" [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5086c1'" [innerStrokeColor]="'#84b6f4'" [animation]="true" [animationDuration]="300">
-      </circle-progress>      
-    </div>
-    <div class="col-md-3">
-      <circle-progress [percent]="30" [radius]="70" [imageSrc]="'./assets/javascript.png'" [responsive]="true" [showImage]="true"
-        [imageHeight]="60" [imageWidth]="60" [showUnits]="false" [outerStrokeWidth]="12" [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#c06500'" [innerStrokeColor]="'#ff9800'" [animation]="true" [animationDuration]="300">
-      </circle-progress>      
-    </div>
-    <div class="col-md-3">
-      <circle-progress [percent]="40" [radius]="70" [imageSrc]="'./assets/github_syh.png'" [responsive]="true" [showImage]="true"
-        [imageHeight]="60" [imageWidth]="60" [showUnits]="false" [outerStrokeWidth]="12" [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#512DA8'" [innerStrokeColor]="'#9575CD'" [animation]="true" [animationDuration]="300">
-      </circle-progress>      
+
+      <td *ngIf="isLogged">
+        <button class="btn btn-warning" routerLink="/editskill/{{skill.id}}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+            viewBox="0 0 16 16">
+            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 
+        1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 
+        13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 
+        0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 
+        3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+          </svg></button>
+      </td>
+  
+      <td *ngIf="isLogged">
+        <button class="btn btn-danger" (click)="delete(skill.id)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
+            viewBox="0 0 16 16">
+            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 
+            1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 
+            16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 
+            1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 
+            .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 
+            8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 
+            0V5a.5.5 0 0 1 .5-.5Z" />
+          </svg></button>
+      </td>
     </div>
   </div>
 </div>
