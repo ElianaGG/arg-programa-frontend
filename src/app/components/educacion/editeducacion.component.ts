@@ -16,16 +16,16 @@ export class EditeducacionComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.educacionS.detail(id).subscribe(
-      data =>{
+      data => {
         this.educacion = data;
       },
-      err =>{
+      err => {
         this.router.navigate(['']);
       }
     )
   }
 
-  onUpdate(): void{
+  onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.educacionS.update(id, this.educacion).subscribe(
       data => {

@@ -3,24 +3,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
-<div class="container-fluid" *ngIf="educacion">
+<div class="container-fluid" *ngIf="proyecto">
     <div class="row">
         <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
             <div class="form-group">
-                <label for="nombreEdu">
+                <label for="nombreP">
                     <h3>Nombre de la institución</h3>
                 </label>
-                <input type="text" class="form-control" id="nombreEdu" name="nombreEdu"
-                    [(ngModel)]="educacion.nombreEdu" required>
+                <input type="text" class="form-control" id="nombreP" name="nombreP"
+                    [(ngModel)]="proyecto.nombreP" required>
             </div>
             <div class="form-group">
                 <label for="descripcionEdu">
-                    <h3>Descripción de aprendizaje</h3>
+                    <h3>Descripción del proyecto</h3>
                 </label>
-                <input type="text" class="form-control" id="descripcionEdu" name="descripcionEdu"
-                    [(ngModel)]="educacion.descripcionEdu" required>
+                <input type="text" class="form-control" id="descripcionP" name="descripcionP"
+                    [(ngModel)]="proyecto.descripcionP" required>
             </div>
-            <button class="btn btn-light">Actualizar educacion</button>
+            <button class="btn btn-light">Actualizar proyecto</button>
         </form>
     </div>
 </div>

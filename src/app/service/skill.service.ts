@@ -8,27 +8,27 @@ import { Skill } from '../model/skill';
 })
 export class SkillService {
 
- skURL = 'https://argprogramabackend.herokuapp.com/skill/'
+  skURL = 'https://argprogramabackend.herokuapp.com/skill/'
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  public lista(): Observable<Skill[]>{
+  public lista(): Observable<Skill[]> {
     return this.httpClient.get<Skill[]>(this.skURL + 'lista');
   }
 
-  public detail(id: number): Observable<Skill>{
+  public detail(id: number): Observable<Skill> {
     return this.httpClient.get<Skill>(this.skURL + `detail/${id}`);
   }
 
-  public save(skill: Skill): Observable<any>{
+  public save(skill: Skill): Observable<any> {
     return this.httpClient.post<any>(this.skURL, skill)
   }
 
-  public update(id: number, skill: Skill): Observable<any>{
+  public update(id: number, skill: Skill): Observable<any> {
     return this.httpClient.put<any>(this.skURL + `update/${id}`, skill);
   }
 
-  public delete(id: number): Observable<any>{
+  public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.skURL + `delete/${id}`);
   }
 }
