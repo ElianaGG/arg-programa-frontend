@@ -32,7 +32,7 @@ export class EditeducacionComponent implements OnInit {
         this.router.navigate([''])
       },
       err => {
-        alert("Error al modifar educación");
+        alert("Error al modificar educación");
         this.router.navigate(['']);
       }
     )
