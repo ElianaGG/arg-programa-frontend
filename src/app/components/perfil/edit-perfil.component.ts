@@ -21,6 +21,7 @@ export class EditPerfilComponent implements OnInit {
         this.persona = data;
       },
       err => {
+        alert("Error al modificar");
         this.router.navigate(['']);
       }
     )
@@ -28,6 +29,7 @@ export class EditPerfilComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
+    this.persona.img = this.imageService.url
     this.personaService.update(id, this.persona).subscribe(
       data => {
         this.router.navigate([''])
@@ -40,6 +42,8 @@ export class EditPerfilComponent implements OnInit {
   }
 
   uploadImage($event: any) {
-    this.imageService.uploadImage($event)
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = "perfil_" + id;
+    this.imageService.uploadImage($event, name)
    }
 }
