@@ -21,7 +21,7 @@ export class NewproyectoComponent implements OnInit {
     const proyecto = new Proyecto(this.nombreP, this.descripcionP);
     this.proyectoS.save(proyecto).subscribe(
       data => {
-        alert("Proyecto agregadO correctamente");
+        alert("Proyecto agregado correctamente");
         this.router.navigate(['']);
       },
       err => {
