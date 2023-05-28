@@ -6,28 +6,26 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 @Component({
   selector: 'app-newproyecto',
   templateUrl: './newproyecto.component.html',
-  styleUrls: ['./newproyecto.component.css']
+  styleUrls: ['./newproyecto.component.css'],
 })
 export class NewproyectoComponent implements OnInit {
   nombreP: string = '';
   descripcionP: string = '';
 
-  constructor(private proyectoS: ProyectoService, private router: Router) { }
+  constructor(private proyectoS: ProyectoService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onCreate(): void {
     const proyecto = new Proyecto(this.nombreP, this.descripcionP);
     this.proyectoS.save(proyecto).subscribe(
-      data => {
-        alert("Proyecto agregado correctamente");
+      (data) => {
+        alert('Proyecto agregado correctamente');
         this.router.navigate(['']);
       },
-      err => {
-        alert("Falló al añadir proyecto");
+      (err) => {
+        alert('Falló al añadir proyecto');
       }
-    )
+    );
   }
-
 }

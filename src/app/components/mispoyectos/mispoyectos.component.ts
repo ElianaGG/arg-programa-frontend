@@ -6,12 +6,15 @@ import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-mispoyectos',
   templateUrl: './mispoyectos.component.html',
-  styleUrls: ['./mispoyectos.component.css']
+  styleUrls: ['./mispoyectos.component.css'],
 })
 export class MispoyectosComponent implements OnInit {
   proyecto: Proyecto[] = [];
 
-  constructor(private proyectoS: ProyectoService, private tokenService: TokenService) { }
+  constructor(
+    private proyectoS: ProyectoService,
+    private tokenService: TokenService
+  ) {}
 
   isLogged = false;
 
@@ -19,30 +22,27 @@ export class MispoyectosComponent implements OnInit {
     this.cargarProyecto();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
-    }
-    else {
+    } else {
       this.isLogged = false;
     }
   }
 
   cargarProyecto(): void {
-    this.proyectoS.lista().subscribe(
-      data => {
-        this.proyecto= data;
-      }
-    )
+    this.proyectoS.lista().subscribe((data) => {
+      this.proyecto = data;
+    });
   }
 
   delete(id: number) {
     if (id != undefined) {
       this.proyectoS.delete(id).subscribe(
-        data => {
-          this. cargarProyecto();
+        (data) => {
+          this.cargarProyecto();
         },
-        err => {
-          alert("No se pudo borrar proyecto");
+        (err) => {
+          alert('No se pudo borrar proyecto');
         }
-      )
+      );
     }
   }
 }

@@ -6,12 +6,15 @@ import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.css']
+  styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
   experiencia: Experiencia[] = [];
 
-  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
+  constructor(
+    private sExperiencia: SExperienciaService,
+    private tokenService: TokenService
+  ) {}
 
   isLogged = false;
 
@@ -19,27 +22,27 @@ export class ExperienciaComponent implements OnInit {
     this.cargarExperiencia();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
-    }
-    else {
+    } else {
       this.isLogged = false;
     }
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => { this.experiencia = data })
+    this.sExperiencia.lista().subscribe((data) => {
+      this.experiencia = data;
+    });
   }
 
   delete(id?: number) {
     if (id != undefined) {
       this.sExperiencia.delete(id).subscribe(
-        data => {
+        (data) => {
           this.cargarExperiencia();
         },
-        err => {
-          alert("No se pudo borrar la experiencia");
+        (err) => {
+          alert('No se pudo borrar la experiencia');
         }
-      )
+      );
     }
   }
 }
-

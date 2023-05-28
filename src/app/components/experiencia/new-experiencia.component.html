@@ -1,20 +1,44 @@
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<div class="container-fluid">
+<section class="grandiet-custom vh-100">
+  <div class="container-fluid">
     <div class="row">
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombreExp"><h3>Nombre de la organización</h3></label>
-                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
-                </div>
-                <div class="form-group">
-                    <label for="descriptionExp"><h3>Descripción de las tareas</h3></label>
-                    <input type="text" class="form-control" id="descriptionExp" name="descriptionExp" [(ngModel)]="descriptionExp" required>
-                </div>
-                    <button class="btn btn-light">Agregar experiencia</button>
-            </form>
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label class="mb-2" for="nombreExp"
+            ><h3>Nombre de la organización</h3></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="nombreExp"
+            name="nombreExp"
+            [(ngModel)]="nombreExp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label class="mb-2" for="descriptionExp"
+            ><h3>Descripción de las tareas</h3></label
+          >
+          <textarea
+            type="text"
+            class="form-control"
+            rows="6"
+            id="descriptionExp"
+            name="descriptionExp"
+            [(ngModel)]="descriptionExp"
+            required
+          ></textarea>
+        </div>
+        <button class="btn btn-light mt-2">Agregar experiencia</button>
+      </form>
     </div>
-</div>
+  </div>
+</section>
