@@ -6,35 +6,38 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 @Component({
   selector: 'app-editproyecto',
   templateUrl: './editproyecto.component.html',
-  styleUrls: ['./editproyecto.component.css']
+  styleUrls: ['./editproyecto.component.css'],
 })
 export class EditproyectoComponent implements OnInit {
   proyecto: Proyecto = null;
 
-  constructor(private proyectoS: ProyectoService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private proyectoS: ProyectoService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.proyectoS.detail(id).subscribe(
-      data => {
+      (data) => {
         this.proyecto = data;
       },
-      err => {
+      (err) => {
         this.router.navigate(['']);
       }
-    )
+    );
   }
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.proyectoS.update(id, this.proyecto).subscribe(
-      data => {
-        this.router.navigate([''])
+      (data) => {
+        this.router.navigate(['']);
       },
-      err => {
-        alert("Error al modificar proyecto");
+      (err) => {
+        alert('Error al modificar proyecto');
         this.router.navigate(['']);
       }
-    )
+    );
   }
-
 }

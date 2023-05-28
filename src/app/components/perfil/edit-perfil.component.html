@@ -1,40 +1,73 @@
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<div class="container-fluid" *ngIf="persona">
+<section class="grandiet-custom vh-100">
+  <div class="container-fluid" *ngIf="persona">
     <div class="row">
-        <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-            <div class="form-group">
-                <label for="nombre">
-                    <h3>Nombre</h3>
-                </label>
-                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="apellido">
-                    <h3>Apellido</h3>
-                </label>
-                <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="persona.apellido"
-                    required>
-            </div>
-            <div class="form-group">
-                <label for="descripcion">
-                    <h3>Descripción de persona</h3>
-                </label>
-                <input type="text" class="form-control" id="descripcion" name="descripcion"
-                    [(ngModel)]="persona.descripcion" required>
-            </div>
-            <div class="form-group">
-                <label for="img">
-                    <h3>Imagen</h3>
-                </label>
-                <input type="file" class="form-control" id="img" name="img" [(ngModel)]="persona.img"
-                    (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
-            </div>
-            <br>
-            <button class="btn btn-light">Actualizar perfil</button>
-        </form>
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label for="nombre">
+            <h3>Nombre</h3>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="persona.nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label class="mb-2" for="apellido">
+            <h3>Apellido</h3>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            name="apellido"
+            [(ngModel)]="persona.apellido"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="descripcion">
+            <h3>Descripción de persona</h3>
+          </label>
+          <textarea
+            type="text"
+            class="form-control"
+            rows="6"
+            id="descripcion"
+            name="descripcion"
+            [(ngModel)]="persona.descripcion"
+            required
+          >
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="img">
+            <h3>Imagen</h3>
+          </label>
+          <input
+            type="file"
+            class="form-control"
+            id="img"
+            name="img"
+            [(ngModel)]="persona.img"
+            (change)="uploadImage($event)"
+            accept=".jpg, .jpeg, .png"
+          />
+        </div>
+        <br />
+        <button class="btn btn-light">Actualizar perfil</button>
+      </form>
     </div>
-</div>
+  </div>
+</section>

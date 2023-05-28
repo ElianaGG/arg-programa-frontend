@@ -1,25 +1,25 @@
-.row {
-    background: linear-gradient(to right, rgba(27, 94, 32, 1), rgb(217, 195, 161));
+.grandiet-custom {
+  background: linear-gradient(to right, #bccaf4, rgb(217, 195, 161));
 }
 
 div {
-    padding: 30px;
+  padding: 15px;
 }
 
 form {
-    width: 600px;
-    padding: 50px;
-    border-radius: 10px;
-    margin: auto;
-    background-color: black;
-    font-family: 'Noto Sans JP', sans-serif;
-    font: bold;
-    color: #d2dce6;
+  width: 600px;
+  padding: 50px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: black;
+  font-family: "Noto Sans JP", sans-serif;
+  font: bold;
+  color: #d2dce6;
 }
 
 button {
-    font-family: 'Noto Sans JP', sans-serif;
-    font: bold;
-    position: relative;
-    left: 170px;
+  font-family: "Noto Sans JP", sans-serif;
+  font: bold;
+  position: relative;
+  left: 170px;
 }

@@ -1,11 +1,11 @@
-.row{
-    padding: 20px;
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 14px;
-    color: white;
-    text-align: center;
-    box-shadow: 2px -2px 5px #0e6655;
+.row {
+  padding: 20px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  box-shadow: 2px -2px 5px #57349e;
 }
-div{
-    background-color: #315a45;
-    }
+div {
+  background-color: #8a80cc;
+}

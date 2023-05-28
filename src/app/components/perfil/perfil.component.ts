@@ -6,12 +6,15 @@ import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.css']
+  styleUrls: ['./perfil.component.css'],
 })
 export class PerfilComponent implements OnInit {
   persona: Persona = null;
 
-  constructor(public personaService: PersonaService, private tokenService: TokenService) { }
+  constructor(
+    public personaService: PersonaService,
+    private tokenService: TokenService
+  ) {}
 
   isLogged = false;
 
@@ -19,14 +22,14 @@ export class PerfilComponent implements OnInit {
     this.cargarPersona();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
-    }
-    else {
+    } else {
       this.isLogged = false;
     }
   }
 
   cargarPersona() {
-    this.personaService.detail(1).subscribe(data => { this.persona = data })
+    this.personaService.detail(1).subscribe((data) => {
+      this.persona = data;
+    });
   }
-
 }
